@@ -2,11 +2,15 @@
 import Layout from '../layouts/Layout.astro';
 import ShopBox from '../components/shop-box';
 import Header from '../components/header/index.astro';
+import Filter from '../components/filter/index.astro';
 ---
 
 <Layout title="동글랜드 :: 플리마켓">
   <Header />
   <div class="mt-[100px] px-[30px]">
-    <ShopBox client:load />
+    <Filter />
+    <div class="mt-[20px] h-[80vh] overflow-scroll">
+      <ShopBox client:load />
+    </div>
   </div>
 </Layout>

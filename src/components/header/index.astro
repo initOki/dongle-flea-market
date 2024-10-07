@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import Logo from './Dongle-logo.png';
 import Search from './Search';
+import LatestDate from './Date';
 ---
 
 <header class="fixed top-0 left-0 w-full bg-[#FFFFFF] border-b-[1px] border-[1px] border-[#ECECEC] z-[999]">
@@ -14,6 +15,8 @@ import Search from './Search';
       <Search client:load />
     </div>
 
-    <div class="w-[100px]"></div>
+    <div class="">
+      <LatestDate client:load />
+    </div>
   </div>
 </header>

@@ -6,8 +6,10 @@ type SearchStore = {
   outputData: any;
   offerList: any;
   shopList: any;
+  inStock: boolean;
   setSearchText: (searchText: string) => void;
   setOfferList: () => void;
+  setInStock: () => void;
 };
 
 export const useSearchStore = create<SearchStore>((set) => ({
@@ -15,6 +17,7 @@ export const useSearchStore = create<SearchStore>((set) => ({
   outputData: OutputData,
   offerList: [],
   shopList: [],
+  inStock: false,
   setSearchText: (searchText) => {
     set(() => ({ searchText: searchText === '' ? null : searchText }));
   },
@@ -39,5 +42,8 @@ export const useSearchStore = create<SearchStore>((set) => ({
       offers.push(newOffers);
     });
     set(() => ({ offerList: offers, shopList: shopList }));
+  },
+  setInStock: () => {
+    set((state) => ({ inStock: !state.inStock }));
   },
 }));
