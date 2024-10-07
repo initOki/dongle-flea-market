@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ShopBox from '../components/shop-box';
+import Header from '../components/header/index.astro';
+---
+
+<Layout title="동글랜드 :: 플리마켓">
+  <Header />
+  <div class="mt-[100px] px-[30px]">
+    <ShopBox client:load />
+  </div>
+</Layout>

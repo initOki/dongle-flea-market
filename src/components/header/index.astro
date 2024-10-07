@@ -1,0 +1,19 @@
+---
+import { Image } from 'astro:assets';
+import Logo from './Dongle-logo.png';
+import Search from './Search';
+---
+
+<header class="fixed top-0 left-0 w-full bg-[#FFFFFF] border-b-[1px] border-[1px] border-[#ECECEC] z-[999]">
+  <div class="flex items-center justify-between px-[30px] py-[14px]">
+    <div class="w-[100px]">
+      <Image src={Logo} alt="로고" />
+    </div>
+
+    <div class="w-[300px]">
+      <Search client:load />
+    </div>
+
+    <div class="w-[100px]"></div>
+  </div>
+</header>
