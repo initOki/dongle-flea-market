@@ -22,7 +22,12 @@ const ShopBox = () => {
 
         if (someOffer || searchText === '' || searchText === null) {
           return (
-            <div className="border-solid border-[1px] border-[#ECECEC] rounded-[6px] px-[14px] py-[16px] mb-[20px]">
+            <div
+              className="border-solid border-[1px] border-[#ECECEC] rounded-[6px] px-[14px] py-[16px] mb-[20px]"
+              style={{
+                boxShadow: '0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);',
+              }}
+            >
               <div className="flex items-center justify-between border-b-[1px] border-solid border-[#CCCCCC] mb-[15px] pb-[10px]">
                 <p className="text-[24px] text-[#FFB046] font-bold">{item.shop_name}</p>
                 <div>
@@ -36,7 +41,7 @@ const ShopBox = () => {
               </div>
 
               <div>
-                <div className="w-full grid grid-flow-col justify-between px-[12px] py-[14px] border-solid border-b-[1px] border-[#ECECEC]">
+                <div className="w-full grid grid-flow-col justify-between px-[12px] py-[14px] border-solid border-b-[2px] border-[#ECECEC]">
                   <div className="text-[14px] text-center w-[300px] font-bold">아이템</div>
                   <div className="text-[14px] text-right w-[120px] font-bold">수량</div>
                   <div className="text-[14px] text-right w-[120px] font-bold">가격</div>

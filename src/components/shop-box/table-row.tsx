@@ -21,6 +21,13 @@ const ShopBoxTableRow = ({ shop }: ShopBoxTableRowProps) => {
     return '';
   };
 
+  const returnTextBgColor = (item: any) => {
+    if (item.own_name.includes(text)) {
+      return 'bg-yellow-100';
+    }
+    return '';
+  }
+
   const createOfferList = () => {
     const offers = Object.keys(shop.offers).map((key) => ({
       name: key,
@@ -57,10 +64,10 @@ const ShopBoxTableRow = ({ shop }: ShopBoxTableRowProps) => {
           if (item.price !== 0 && item.unit_price !== 0) {
             if (inStock) {
               if (item.stock !== 0) {
-                return <TableRowDetail item={item} returnBgColor={returnBgColor} />;
+                return <TableRowDetail item={item} returnBgColor={returnBgColor} returnTextBgColor={returnTextBgColor}/>;
               }
             } else {
-              return <TableRowDetail item={item} returnBgColor={returnBgColor} />;
+              return <TableRowDetail item={item} returnBgColor={returnBgColor} returnTextBgColor={returnTextBgColor}/>;
             }
           }
         })}
@@ -73,11 +80,11 @@ const ShopBoxTableRow = ({ shop }: ShopBoxTableRowProps) => {
           if (inStock) {
             if (item.stock !== 0) {
               if (item.own_name.includes(text)) {
-                return <TableRowDetail item={item} returnBgColor={returnBgColor} />;
+                return <TableRowDetail item={item} returnBgColor={returnBgColor} returnTextBgColor={returnTextBgColor}/>;
               }
             }
           } else {
-            return <TableRowDetail item={item} returnBgColor={returnBgColor} />;
+            return <TableRowDetail item={item} returnBgColor={returnBgColor} returnTextBgColor={returnTextBgColor}/>;
           }
         })}
       </>
